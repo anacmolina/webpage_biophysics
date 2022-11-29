@@ -3,7 +3,7 @@
 //get user input from url: http://127.0.0.1:8001/?student_id=1001735333
 var url_string = window.location.href
 var url = new URL(url_string);
-var student_id = url.searchParams.get("student_id");
+var student_id = url.searchParams.get("doi");
 //
 function Get(yourUrl){
   var Httpreq = new XMLHttpRequest(); // a new request
@@ -55,8 +55,10 @@ function jsonList(item) {
   // Create a new div element dynamically
   const div = document.createElement("div");
   // get the required details from the local.json file to the div element using innerHTML
+  //div.innerHTML = `
+  //      ${item.title} got Parcial 1: ${item.Parcial_1.value} from ${APIurl}`;
   div.innerHTML = `
-        ${item.student_id} got Parcial 1: ${item.Parcial_1.value} from ${APIurl}`;
+        ${item.title}`;
   // attach the newly created div element to the original div element, in this case to the class '.output'
   output.append(div);
   // Add styling to the displayed content
