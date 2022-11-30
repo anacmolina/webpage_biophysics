@@ -26,7 +26,7 @@ file='https://raw.githubusercontent.com/anacmolina/webpage_biophysics/main/data/
 #]
 
 @app.get("/")
-def read_item(student_id: str = " "):
+def read_item(student_id: str = ""):
     '''
     You can write the API documentation here:
     
@@ -34,8 +34,6 @@ def read_item(student_id: str = " "):
     
     USAGE: http://127.0.0.1:8000/?student_id=1113674432
     '''
-    #student_id = "https://doi.org/"+student_id
-    print(student_id)
     #Real time JSON file
     r=requests.get(file)
     db=r.json()
