@@ -2,7 +2,7 @@
 
 ## Backend
 
-# Fast API
+## Fast API
 Run in the main folder
 ```
 $ uvicorn main:app --reload 
@@ -11,18 +11,20 @@ and copy and paste the url in your browser, e.g:
 
 http://127.0.0.1:8000/
 
-You can now filter with the JSON keys into the url, e.g:
-
-http://127.0.0.1:8000/?doi=1001735333
-
-
 
 ## Frontend
 ```
 $ python3 -m http.server 8001
 ```
 
-See:
-* https://www.geeksforgeeks.org/how-to-use-the-javascript-fetch-api-to-get-data/
-* https://stackoverflow.com/questions/12460378/how-to-get-json-from-url-in-javascript
-* https://stackoverflow.com/a/22790025/2268280
+You can now filter with the JSON keys into the url, e.g:
+
+http://127.0.0.1:8000/?doi=https://doi.org/10.3389/fmolb.2021.636562
+
+### All DOI available are:
+
+- https://doi.org/10.1038/s41598-021-92621-1
+- https://doi.org/10.3389/fmolb.2021.636562
+- https://doi.org/10.1016/j.cpc.2020.107716
+- https://doi.org/10.1007/s10822-020-00329-7
+- https://doi.org/10.1016/j.sbi.2018.03.004
