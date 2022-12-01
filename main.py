@@ -42,7 +42,6 @@ def read_item(student_id: str = ""):
     json.dump(new_db,f)
     f.close()
     
-    print(new_db)
     #with open(file) as json_file:
     #   db=json.load(json_file)
 
