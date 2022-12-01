@@ -41,6 +41,7 @@ def read_item(student_id: str = ""):
     f=open('data/filtered.json','w')
     json.dump(new_db,f)
     f.close()
+    
     #with open(file) as json_file:
     #   db=json.load(json_file)
 
@@ -48,5 +49,3 @@ def read_item(student_id: str = ""):
         return db
     else:
     	return new_db
-
-#read_item("https://doi.org/10.1038/s41598-021-92621-1")
