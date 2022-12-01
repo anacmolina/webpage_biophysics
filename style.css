@@ -1,11 +1,11 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #070116;
+    background-color: #f8f8f8;
   }
   
   div {
     text-align: center;
-    background-color: rgb(41, 216, 216);
+    background-color: rgba(152, 105, 155, 0.96);
     padding: 10px;
   }
   
@@ -19,11 +19,11 @@ body {
     margin: 40px;
     padding: 50px;
     font-size: 20px;
-    color: white;
+    color: rgb(255, 255, 255);
     letter-spacing: 2px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-image: linear-gradient( 160deg, #ff0000, #ec008c );
+    background-image: linear-gradient( 45deg, hsl(211, 46%, 38%), #256653 );
     border-radius: 30px;
     cursor: pointer;
   }
