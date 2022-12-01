@@ -3,14 +3,14 @@
 //get user input from url: http://127.0.0.1:8001/?student_id=1001735333
 var url_string = window.location.href
 var url = new URL(url_string);
-var student_id = url.searchParams.get("student_id");
+var doi = url.searchParams.get("doi");
 
-  function Get(yourUrl){
-  var Httpreq = new XMLHttpRequest(); // a new request
-  Httpreq.open("GET",yourUrl,false);
-  Httpreq.send(null);
-  return Httpreq.responseText;          
-}
+//  function Get(yourUrl){
+//  var Httpreq = new XMLHttpRequest(); // a new request
+//  Httpreq.open("GET",yourUrl,false);
+//  Httpreq.send(null);
+//  return Httpreq.responseText;          
+//}
 const output = document.querySelector(".output");
 //console.log(output); // <div class="output"></div>
 
@@ -20,10 +20,10 @@ const output = document.querySelector(".output");
 // Storing json data in a variable
 //const localJsonFile = "local.json";
 const localJsonFile = "data/filtered.json";
-const APIurl = "http://127.0.0.1:8000?student_id="+student_id;
+const APIurl = "http://127.0.0.1:8000?doi="+doi;
 //var json_obj = JSON.parse(Get(APIurl));
 
-fetch(`http://127.0.0.1:8000?student_id=${student_id}`)
+fetch(`http://127.0.0.1:8000/?doi=${doi}`)
   .then((response) => JSON.parse(response))
   .catch((error) => console.log(error))
 
@@ -71,7 +71,7 @@ window.addEventListener("DOMContentLoaded", () => {
         jsonList(el); // calling jsonList function
       });
     });
-  }, "500");
+  }, "1000");
 });
 
 // Create a function to display the json data dynamically on the webpage
@@ -82,7 +82,9 @@ function jsonList(item) {
   // div.innerHTML = `
   //      ${item.student_id}; got Parcial 1: ${item.Parcial_1.value} from ${APIurl}`;
   div.innerHTML = `
-    ${item.authorships[0].author.display_name} ${item.title} ${item.publication_year}`; 
+  <p> <b> TITLE: </b> ${item.title} </p> 
+  <p> <b> FIRST AUTHOR: </b> ${item.authorships[0].author.display_name} </p>  
+  <p> <b> YEAR: </b> ${item.publication_year} </p>`;
         // attach the newly created div element to the original div element, in this case to the class '.output'
   output.append(div);
   // Add styling to the displayed content

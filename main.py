@@ -15,29 +15,18 @@ app = FastAPI()
 
 file='https://raw.githubusercontent.com/anacmolina/webpage_biophysics/main/data/biophysics_papers.json'
 
-#JSON SCHEME
-#[{"student_id": str,
-# "Evaluation 1":{"value": int,
-#                 "%": int,
-#                 "Description": str
-#                 }, 
-# ...
-# }
-#]
 
 @app.get("/")
-def read_item(student_id: str = ""):
+def read_item(doi: str = ""):
     '''
     You can write the API documentation here:
-    
-    For example: 
-    
-    USAGE: http://127.0.0.1:8000/?student_id=1113674432
+        
+    USAGE: http://127.0.0.1:8000/?doi=
     '''
     #Real time JSON file
     r=requests.get(file)
     db=r.json()
-    new_db=[ d for d in db if d.get('doi')==student_id  ]
+    new_db=[ d for d in db if d.get('doi')==doi  ]
     f=open('data/filtered.json','w')
     json.dump(new_db,f)
     f.close()
@@ -45,7 +34,7 @@ def read_item(student_id: str = ""):
     #with open(file) as json_file:
     #   db=json.load(json_file)
 
-    if not student_id:
+    if not doi:
         return db
     else:
     	return new_db
